@@ -21,7 +21,8 @@ Route::get('/home', function() {
     return view('home');
 })->name('home')->middleware('auth');
 
-Route::get('/ok','api_controller@getTeste');
+//Route::get('/ok','api_controller@getTeste');
+Route::post('login','api_controller@login');
 
 
 
