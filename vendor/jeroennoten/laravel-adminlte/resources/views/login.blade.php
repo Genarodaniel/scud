@@ -10,6 +10,7 @@
 @section('body')
     <div class="login-box">
         <div class="login-logo">
+        {{ session('id') }}
             <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</a>
         </div>
         <!-- /.login-logo -->
@@ -40,11 +41,12 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-8">
-                        <div class="icheck-primary">
-                            <input type="checkbox" name="remember" id="remember">
-                            <label for="remember">{{ __('adminlte::adminlte.remember_me') }}</label>
-                        </div>
-                    </div>
+                    <div class="form-group">
+                            <select class="form-control" id="select_type">
+                                <option class="" value="ar"> Morador </option>
+                                <option class="" value="am"> Síndico </option>
+                            </select>
+                    </div></div>
                     <!-- /.col -->
                     <div class="col-xs-4">
                         <button type="submit" class="btn btn-primary btn-block btn-flat">
@@ -55,16 +57,11 @@
                 </div>
             </form>
             <br>
-            <p>
-                <a href="{{ url(config('adminlte.password_reset_url', 'password/reset')) }}" class="text-center">
-                    {{ __('adminlte::adminlte.i_forgot_my_password') }}
-                </a>
-            </p>
             @if (config('adminlte.register_url', 'register'))
                 <p>
-                    <a href="{{ url(config('adminlte.register_url', 'register')) }}" class="text-center">
+                    <a href="{{ url(config('adminlte.register_url', 'register')) }}" class="text-center"><button class="btn btn-primary btn-block btn-flat">
                         {{ __('adminlte::adminlte.register_a_new_membership') }}
-                    </a>
+                    </button></a>
                 </p>
             @endif
         </div>

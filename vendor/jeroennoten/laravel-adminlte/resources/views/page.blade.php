@@ -55,7 +55,6 @@
             @endif
                 <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">
-
                     <ul class="nav navbar-nav">
                         <li>
                             <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
